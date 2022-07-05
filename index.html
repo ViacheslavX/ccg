@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script type="module" src="app/pantoneCoated.js" defer></script>
+    <script type="module" src="app/render.js" defer></script>
+    <script type="module" src="app/JsonDataCollector.js" defer></script>
+    <script type="module" src="app/cmykCoder.js" defer></script>
+    <script type="module" src="app/cmykSorter.js" defer></script>
+    <script type="module" src="app/clearElements.js" defer></script>
+    <script type="module" src="app/app.js" defer></script>
+    <script type="module" src="app/postData.js" defer></script>
+    <script src="sortable/Sortable.min.js"
+        integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="gradient-text">Color Codes Generator</h1>
+        <div>
+            <input type="text" placeholder="Номер заказа">
+            <button id="getdatabtn">Запросить</button>
+            <button id="resetbtn">Сбросить</button>
+            <button id="cmyksorter">Авторасклад по CMYK</button>
+            <button>Авторасклад по PANTONES</button>
+            <button id="postbtn">Применить</button>
+        </div>
+    </header>
+    <table id="demo"></table>
+    <div class="main">
+        <div class="group">
+            <h2>Не назначеные</h2>
+
+            <ol class="list" id="unsorted">
+                <!-- <li class="list-group-item" id='0' draggable="true">321756_Blueberry<div>
+                        <div class="separs">4 separations C|M|Y|K<div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="code">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                    </div>
+                </li> -->
+            </ol>
+        </div>
+        <div class="group">
+            <h2>CMYK pattern</h2>
+            <ol class="list"  id="cmyk">
+
+            </ol>
+            <button class="insert-placeholder-btn">Insert Placeholder</button>
+        </div>
+        <div class="group">
+            <h2>Pantone pattern</h2>
+            <ol class="list"  id="spot">
+
+            </ol>
+            <button class="insert-placeholder-btn">Insert Placeholder</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+html {
+    font-family: monospace;
+    /* background-color: #d8dbdd; */
+  }
+body {
+  font-size: medium;
+    min-width: 842px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* background-color: silver; */
+    padding: 0;
+    /* border: 3px solid black; */
+    /* border-radius: 30px; */
+  }
+
+  header {
+    border-radius: 0px 0px 5px 5px;
+
+    margin: 0;
+    padding: 20px;
+
+    background-color: rgb(37, 76, 92);
+  }
+
+  h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    /* text-align: center; */
+    /* margin-bottom: 0; */
+    /* margin-bottom: -0.25em; */
+    display: block;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-right: auto;
+    cursor: pointer;
+    width: 450px;
+  }
+
+  .gradient-text {
+    /* Fallback: Set a background color. */
+    background-color: #CA4246;
+    
+    /* Create the gradient. */
+     background-image: linear-gradient(
+          45deg,
+          #0e9fff 16.666%, 
+          #e141be 16.666%, 
+          #fffb00 33.333%, 
+          #F18F43 33.333%, 
+          #F18F43 50%, 
+          #8B9862 50%, 
+          #8B9862 66.666%, 
+          #86adff 66.666%, 
+          #476098 83.333%, 
+          #A7489B 83.333%);
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+    /* Animate the text when loading the element. */
+      /* This animates it on page load and when hovering out. */
+      animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+  
+  }
+  
+  .gradient-text:hover{
+      animation: rainbow-text-simple-animation 0.65s ease-in forwards;
+  }
+  
+  
+  /* Move the background and make it smaller. */
+  /* Animation shown when entering the page and after the hover animation. */
+  @keyframes rainbow-text-simple-animation-rev {
+      0% {
+          background-size: 650%;
+      }
+      40% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 100%;
+      }
+  }
+  
+  /* Move the background and make it larger. */
+  /* Animation shown when hovering over the text. */
+  @keyframes rainbow-text-simple-animation {
+      0% {
+          background-size: 100%;
+      }
+      80% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 650%;
+      }
+  }
+
+  h2 {
+    font-size: larger;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .main {
+    /* margin-top: 20px; */
+    /* border: 1px solid black; */
+    /* border-radius: 20px; */
+    /* background-color: rgb(75, 73, 90); */
+    /* padding: 10px; */
+  }
+
+  .group {
+    /* text-align: center; */
+    /* display: flex; */
+    /* background-color: rgb(247, 247, 247); */
+    border: 1px solid rgb(128, 159, 168);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ol {
+    background-color: white;
+    /* border: 1px solid rgb(197, 197, 197); */
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0;
+    /* list-style-position: inside; */
+    /* list-style: circle; */
+
+    counter-reset: section;
+    list-style-type: none;
+
+  }
+
+  li {
+    color: rgb(37, 54, 77);
+    border-bottom:  rgba(255, 255, 255, 0.5) solid 2px;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    /* border-radius: 3px; */
+    /* margin: 3px 0; */
+    padding: 0px 10px;
+    /* box-shadow: 0px 1px 3px rgb(120, 107, 143); */
+  }
+
+  li::before {
+    margin-right: 10px;
+    counter-increment: section;
+    content: counters(section, ".") " ";
+  }
+
+
+  li div {
+    /* width: 50px; */
+    margin-left: auto;
+
+    /* margin-right: 0; */
+    display: flex;
+  }
+
+  .ghost {
+    opacity: 1;
+    background: #C8EBFB;
+  }
+
+  .selected {
+    background-color: rgba(255, 187, 60, 0.774);
+  }
+
+  .sortable-drag {
+    /* display: none; */
+    opacity: 0;
+
+  }
+  
+
+  button {
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px;
+    transition-duration: 0.2s;
+
+  }
+
+  button:hover {
+    background-color: #41454e; /* Green */
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+  }
+
+  .code {
+    margin-left: 15px;
+    display: flex;
+  }
+
+  .code div {
+    margin-right: 3px;
+    width: 10px;
+    height: 15px;
+  }
+  
+  .code :nth-child(1) {
+    width: 5px;
+    /* margin-left: 150px; */
+    background-color: none;
+  }
+
+  .code :nth-child(2) {
+    background-color: none;
+  }
+
+  .code :nth-child(3) {
+    background-color: none;
+  }
+
+  .code :nth-child(4) {
+    background-color: none;
+  }
+
+  #cmyk .code :nth-child(1) {
+    width: 5px;
+    margin-left: 15px;
+    /* background-color: black; */
+  }
+
+  #cmyk .code :nth-child(2) {
+    /* background-color: yellow; */
+  }
+
+  #cmyk .code :nth-child(3) {
+    /* background-color: cyan; */
+  }
+
+  #cmyk .code :nth-child(4) {
+    /* background-color: black; */
+  }
+
+  #spot .code :nth-child(1) {
+    width: 5px;
+    margin-left: 15px;
+    background-color: magenta;
+  }
+
+  #spot .code :nth-child(2) {
+    background-color: magenta;
+  }
+
+  #spot .code :nth-child(3) {
+    background-color: cyan;
+  }
+
+  #spot .code :nth-child(4) {
+    background-color: cyan;
+  }
+
+  .separs div {
+    
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* display: flex; */
+    /* font-size: medium; */
+    /* align-items: center; */
+    /* text-align: center; */
+
+    margin: 0;
+    /* min-width: 20px; */
+    padding: 0 20px 0 0px;
+    /* width: 40px; */
+    /* height: 15px; */
+  }
+
+  .separs div p {
+    color: white;
+    background-color:rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    /* filter: invert(50%); */
+    /* text-shadow: 
+    -0   -0.65px 0.65px   #000,
+    0   -0.65px 0.65px   #000,
+   -0    0.65px 0.65px   #000,
+    0    0.65px 0.65px   #000,
+   -0.65px -0   0.65px   #000,
+    0.65px -0   0.65px   #000,
+   -0.65px  0   0.65px   #000,
+    0.65px  0   0.65px   #000,
+   -0.65px -0.65px 0.65px   #000,
+    0.65px -0.65px 0.65px   #000,
+   -0.65px  0.65px 0.65px   #000,
+    0.65px  0.65px 0.65px   #000,
+   -0.65px -0.65px 0.65px   #000,
+    0.65px -0.65px 0.65px   #000,
+   -0.65px  0.65px 0.65px   #000,
+    0.65px  0.65px 0.65px   #000; */
+    padding: 0 2px 0 2px;
+    margin: 0;
+  }
+
+   /* .separs { */
+/*     
+    color: rgb(63, 63, 83);
+    font-weight: 700;
+
+    margin-left: 15px;
+    display: flex; */
+    /* justify-content: flex-start; */
+    /* width: 120px; */
+  /* }  */
+
+
+  input {
+    border-radius: 5px;
+    border: 1px solid rgb(197, 197, 197);
+    padding: 5px;
+
+  }
+
+  .insert-placeholder-btn {
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
